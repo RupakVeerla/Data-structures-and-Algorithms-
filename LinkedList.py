@@ -8,27 +8,32 @@ class LinkedList:
   def __init__(self):
     self.head = None
     self.tail = None
+  
   def printList(self):
     temp = self.head
     while(temp):
       print(temp.data)
       temp = temp.next
     print('-------------------------')
+  
   def printListRev(self):
     temp = self.tail
     while(temp):
       print(temp.data)
       temp = temp.prev 
+  
   def prepend(self, data):
     new_node = Node(data)
     self.head.prev = new_node
     new_node.next = self.head
     self.head = new_node
+  
   def append(self, data):
     new_node = Node(data)
     self.tail.next = new_node
     new_node.prev = self.tail
     self.tail = new_node
+  
   def insert(self, data, index):
     temp = self.head
     for i in range(index):
@@ -39,6 +44,7 @@ class LinkedList:
     temp.prev = new_node
     new_node.prev = hold_prev
     new_node.next = temp
+  
   def delete(self, index):
     temp = self.head
     for i in range(index):
