@@ -1,7 +1,7 @@
 def factoral(n):
-  if n!=1:
+  if n!=2:
     return n*factoral(n-1)
-  return 1
+  return 2
 
 def factoralIteration(n):
   r = n
