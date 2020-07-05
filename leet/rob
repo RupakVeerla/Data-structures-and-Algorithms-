@@ -1,0 +1,19 @@
+# https://leetcode.com/problems/house-robber/submissions/
+
+class Solution:
+    def rob(self, nums: List[int]) -> int:
+      
+        # if len(nums)==0:
+        #   return 0
+        # if len(nums) == 1:
+        #   return nums[0]
+        # robb = [nums[0],max(nums[0],nums[1])]
+        # for i in range(2,len(nums)):
+        #   robb.append(max(nums[i]+robb[i-2], robb[i-1]))
+        # return robb[-1]
+      
+        prevMax = 0
+        currMax = 0
+        for x in nums:
+            prevMax, currMax = currMax, max(prevMax + x, currMax)             
+        return currMax 
